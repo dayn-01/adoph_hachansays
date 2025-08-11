@@ -5,10 +5,10 @@
 
 
 
-const char1 = new Audio('sfx/simon_ado2.wav'); 
-const char2 = new Audio('sfx/simon_naima.wav'); 
-const char3 = new Audio('sfx/simon_migu.wav'); 
-const char4 = new Audio('sfx/simon_ado.wav'); 
+const char1 = new Audio('/sfx/simon_ado2.wav'); 
+const char2 = new Audio('/sfx/simon_naima.wav'); 
+const char3 = new Audio('/sfx/simon_migu.wav'); 
+const char4 = new Audio('/sfx/simon_ado.wav'); 
 
 
 let powerOn = false;
