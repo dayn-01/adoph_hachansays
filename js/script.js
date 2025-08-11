@@ -168,7 +168,7 @@ function imageChange() {
         index = (index + 1) % urlArrayLength;
     }
 
-setInterval(newImage, 150);
+setInterval(newImage, 200);
 }
 
 imageChange()
