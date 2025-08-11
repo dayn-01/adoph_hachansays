@@ -84,28 +84,3 @@ body {
     cursor: not-allowed;
 }
 
-.top-char1 {
-    background: url("/img/ado2.png");
-    background-repeat: no-repeat;
-    background-size: 100px 100px;
-}
-
-.top-char2 {
-    background: url("/img/naima.jpg");
-    background-repeat: no-repeat;
-    background-size: 100px 100px;
-}
-
-.top-char3 {
-    background: url("/img/migu.jpg");
-    background-repeat: no-repeat;
-    background-size: 100px 100px;
-}
-
-.top-char4 {
-    background: url("/img/ado.jpg");
-    background-repeat: no-repeat;
-    background-size: 100px 100px;
-}
-
-

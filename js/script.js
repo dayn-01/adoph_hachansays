@@ -151,7 +151,6 @@ function togglePower() {
 
 // flying hachan lmao
 var box = document.querySelector('.box');
-
 var imageUrls = [
     "img/Flap-01.png",
     "img/Flap-02.png",
@@ -169,7 +168,7 @@ function imageChange() {
         index = (index + 1) % urlArrayLength;
     }
 
-setInterval(newImage, 150);
+setInterval(newImage, 200);
 }
 
 imageChange()
