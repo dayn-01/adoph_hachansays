@@ -41,13 +41,13 @@ function addToSequence() {
 function playSequence() {
     let i = 0;
     const intervalId = setInterval(() => {
-        highlightButton(sequence[i]);
+        highlightButton(sequence[i], 1);
         i++;
         if (i >= sequence.length) {
             clearInterval(intervalId);
             enableButtons();
         }
-    }, 1000);
+    }, 1250);
 }
 
 function handleClick(button) {
