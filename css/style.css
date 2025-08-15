@@ -59,11 +59,12 @@ body {
 #start-btn,
 #power-btn {
     font-family: 'Balsamiq Sans', sans-serif;
-    margin-top: 30px;
+    margin-top: 5px;
     padding: 10px;
     font-size: 16px;
     text-align: center;
-    width: 230px;
+     position: relative;
+    width: 100%;
     cursor: pointer;
     background-color: #2ecc71;
     color: #fff;
@@ -72,6 +73,7 @@ body {
     border-radius: 5px;
     transition: background-color 0.3s;
 }
+
 
 #start-btn:hover,
 #power-btn:hover {
@@ -85,3 +87,28 @@ body {
     cursor: not-allowed;
 }
 
+
+#overlay2 {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(5, 5, 5, 0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#overlaytext{
+    font-family: "Lucida Console", "Courier New", monospace;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}

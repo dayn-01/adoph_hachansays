@@ -19,13 +19,23 @@ let level = 1;
 const levelCount = document.querySelector('.level-count');
 
 function startGame() {
+   
     sequence.length = 0;
     userSequence.length = 0;
-    level = 1;
+    level = 0;
     levelCount.textContent = level;
+
     nextRound();
     document.getElementById("start-btn").disabled = true;
     document.getElementById("power-btn").disabled = false;
+}
+
+function overlayOn() {
+  document.getElementById("overlay2").style.display = "block";
+}
+
+function overlayOff() {
+  document.getElementById("overlay2").style.display = "none";
 }
 
 function nextRound() {
@@ -48,6 +58,7 @@ function playSequence() {
             enableButtons();
         }
     }, 1250);
+    overlayOff();
 }
 
 function handleClick(button) {
@@ -56,21 +67,17 @@ function handleClick(button) {
         userSequence.push(Number(userColor));
         highlightButton(userColor, 0);
         if (!checkSequence()) {
-            alert(`Game over! Press Start to retry from level 1.\nFINAL SCORE: ${level - 1}`);
+            alert(`Game over! Press Start to retry! \nFINAL SCORE: ${level}`);
             togglePower();
             startGame();
         } else if (userSequence.length === sequence.length) {
             userSequence = [];
             level++;
             levelCount.textContent = level;
-            /*Can change level as per convenience or if we want the game to 
-            continue indefinitely, can omit if-else condition */
-            if (level <= 20) {
-                setTimeout(() => nextRound(), 1000);
-            } else {
-                alert("Congratulations! You won!");
-                startGame();
-            }
+            showLevel(level + 1);
+            overlayOn();
+            
+            setTimeout(() => nextRound(), 1000);
         }
     }
 }
@@ -130,10 +137,6 @@ function disableButtons() {
     button.setAttribute('disabled', 'true'));
 }
 
-function toggleStrictMode() {
-    strictMode = !strictMode;
-}
-
 function togglePower() {
     powerOn = !powerOn;
     if (powerOn) {
@@ -167,8 +170,18 @@ function imageChange() {
         boxModal.innerHTML = Hachantemp;
         index = (index + 1) % urlArrayLength;
     }
-
 setInterval(newImage, 200);
+}
+
+function showLevel(currentCount) {
+    StageTemp = `<div class=" mx-auto mb-4">
+                                        <div class="portfolio-item mx-auto"  >
+                                            <p style="font-size: 40px; color: white;"> Level `+currentCount+`</p>
+                                        
+                                        </div>
+                                    </div>`;
+            const boxProper = document.getElementById('level-show');  
+            boxProper.innerHTML = StageTemp;
 }
 
 imageChange()
